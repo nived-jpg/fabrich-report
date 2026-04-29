@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabrich Client Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-left">
+                <span class="client-report-label">CLIENT REPORT</span>
+                <h1 class="brand-title">Fabrich</h1>
+                <p class="brand-subtitle">drapes, decor and more.</p>
+            </div>
+            <div class="header-right">
+                <span class="reporting-period-label">Reporting Period</span>
+                <h2 class="reporting-period-date" id="reporting-period-date">Mar18 – Apr17 2026</h2>
+            </div>
+        </header>
+
+        <!-- Toggle Section -->
+        <div class="period-toggle">
+            <button class="toggle-btn" id="btn-feb-mar">Feb18 – Mar17 2026</button>
+            <button class="toggle-btn active" id="btn-mar-apr">Mar18 – Apr17 2026</button>
+        </div>
+
+        <!-- KPI Cards Grid -->
+        <div class="kpi-grid">
+            <div class="kpi-card"><span class="kpi-label">LEADS</span><span class="kpi-value" id="kpi-leads">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">CONVERSIONS</span><span class="kpi-value" id="kpi-conversions">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">REVENUE</span><span class="kpi-value" id="kpi-revenue">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">AD SPEND</span><span class="kpi-value" id="kpi-adSpend">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">ROAS</span><span class="kpi-value" id="kpi-roas">--</span></div>
+            
+            <div class="kpi-card"><span class="kpi-label">CPL</span><span class="kpi-value" id="kpi-cpl">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">RETAINER</span><span class="kpi-value" id="kpi-retainer">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">SEO COST</span><span class="kpi-value" id="kpi-seoCost">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">TOTAL SPEND</span><span class="kpi-value" id="kpi-totalSpend">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">ROI</span><span class="kpi-value" id="kpi-roi">--</span></div>
+            <div class="kpi-card"><span class="kpi-label">CPA</span><span class="kpi-value" id="kpi-cpa">--</span></div>
+        </div>
+
+        <!-- Conversion Funnel Section -->
+        <div class="section-card funnel-section">
+            <h3 class="section-title">Conversion Funnel</h3>
+            <div class="funnel-container">
+                <div class="funnel-step">
+                    <span class="funnel-label">Lead → Qualified</span>
+                    <span class="funnel-value" id="funnel-leadQualified-values">-- / --</span>
+                    <span class="funnel-percentage" id="funnel-leadQualified-percentage">--</span>
+                </div>
+                <div class="funnel-arrow">→</div>
+                <div class="funnel-step">
+                    <span class="funnel-label">Qualified → Visit</span>
+                    <span class="funnel-value" id="funnel-qualifiedVisit-values">-- / --</span>
+                    <span class="funnel-percentage" id="funnel-qualifiedVisit-percentage">--</span>
+                </div>
+                <div class="funnel-arrow">→</div>
+                <div class="funnel-step">
+                    <span class="funnel-label">Visit → Sale</span>
+                    <span class="funnel-value" id="funnel-visitSale-values">-- / --</span>
+                    <span class="funnel-percentage" id="funnel-visitSale-percentage">--</span>
+                </div>
+                <div class="funnel-arrow">→</div>
+                <div class="funnel-step">
+                    <span class="funnel-label">Overall Conversion</span>
+                    <span class="funnel-value" id="funnel-overall-values">-- / --</span>
+                    <span class="funnel-percentage" id="funnel-overall-percentage">--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- This Reporting Period Tabs -->
+        <h3 class="section-main-title">This Reporting Period</h3>
+        <div class="main-tabs">
+            <button class="main-tab-btn active" data-target="meta-ads">Meta Ads</button>
+            <button class="main-tab-btn" data-target="instagram">Instagram</button>
+            <button class="main-tab-btn" data-target="facebook">Facebook</button>
+        </div>
+
+        <!-- Tab Content: Meta Ads -->
+        <div class="tab-content active" id="tab-meta-ads">
+            <div class="section-card">
+                <div class="sub-tab-header">
+                    <h3 class="section-title">Ad Performance</h3>
+                    <div class="sub-tabs">
+                        <button class="sub-tab-btn active" data-target="awareness">Awareness</button>
+                        <button class="sub-tab-btn" data-target="lead-generation">Lead Generation</button>
+                    </div>
+                </div>
+                <p class="sub-section-desc" id="meta-ads-desc">Awareness Campaign Performance · Mar – Apr</p>
+                
+                <!-- Awareness Table -->
+                <div class="table-container active" id="table-awareness">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>AD NAME</th>
+                                <th class="right-align">REACH</th>
+                                <th class="right-align">IMPRESSIONS</th>
+                                <th class="right-align">AMOUNT SPENT</th>
+                                <th class="right-align">CPM</th>
+                            </tr>
+                        </thead>
+                        <tbody id="awareness-tbody">
+                            <!-- Injected via JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Lead Gen Table -->
+                <div class="table-container" id="table-lead-generation">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>AD NAME</th>
+                                <th class="right-align">LEADS</th>
+                                <th class="right-align">REACH</th>
+                                <th class="right-align">IMPRESSIONS</th>
+                                <th class="right-align">AMOUNT SPENT</th>
+                                <th class="right-align">CPM</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leadGen-tbody">
+                            <!-- Injected via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Instagram -->
+        <div class="tab-content" id="tab-instagram">
+            <div class="kpi-grid insta-grid">
+                <div class="kpi-card"><span class="kpi-label">TOTAL VIEWS</span><span class="kpi-value" id="insta-totalViews">--</span></div>
+                <div class="kpi-card"><span class="kpi-label">ACCOUNTS REACHED</span><span class="kpi-value" id="insta-accountsReached">--</span></div>
+                <div class="kpi-card"><span class="kpi-label">INTERACTIONS</span><span class="kpi-value" id="insta-interactions">--</span></div>
+                <div class="kpi-card"><span class="kpi-label">PROFILE VISITS</span><span class="kpi-value" id="insta-profileVisits">--</span></div>
+                <div class="kpi-card"><span class="kpi-label">TOTAL FOLLOWERS</span><span class="kpi-value" id="insta-totalFollowers">--</span></div>
+            </div>
+
+            <div class="section-card">
+                <h3 class="section-title">Contents Uploaded Performance</h3>
+                <p class="sub-section-desc" id="insta-desc">Organic post-level metrics · Mar – Apr</p>
+                <div class="table-container active">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>CONTENT NAME</th>
+                                <th class="right-align">VIEWS</th>
+                                <th class="right-align">INTERACTIONS</th>
+                                <th class="right-align">REACH</th>
+                                <th class="right-align">LIKES AND REACTIONS</th>
+                                <th class="right-align">SHARES</th>
+                                <th class="right-align">SAVES</th>
+                                <th>LINK</th>
+                            </tr>
+                        </thead>
+                        <tbody id="insta-tbody">
+                            <!-- Injected via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Facebook -->
+        <div class="tab-content" id="tab-facebook">
+            <div class="kpi-grid fb-grid">
+                <div class="kpi-card"><span class="kpi-label">TOTAL VIEWS</span><span class="kpi-value" id="fb-totalViews">--</span></div>
+                <div class="kpi-card"><span class="kpi-label">UNIQUE VIEWERS</span><span class="kpi-value" id="fb-uniqueViewers">--</span></div>
+                <div class="kpi-card"><span class="kpi-label">ENGAGEMENT</span><span class="kpi-value" id="fb-engagement">--</span></div>
+                <div class="kpi-card"><span class="kpi-label">NET FOLLOWERS</span><span class="kpi-value" id="fb-netFollowers">--</span></div>
+                <div class="kpi-card"><span class="kpi-label">TOTAL FOLLOWERS</span><span class="kpi-value" id="fb-totalFollowers">--</span></div>
+            </div>
+
+            <div class="section-card">
+                <h3 class="section-title">Contents Uploaded Performance</h3>
+                <p class="sub-section-desc" id="fb-desc">Organic post-level metrics · Mar – Apr</p>
+                <div class="table-container active">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>CONTENT NAME</th>
+                                <th class="right-align">VIEWS</th>
+                                <th class="right-align">INTERACTIONS</th>
+                                <th class="right-align">ENGAGEMENTS</th>
+                                <th class="right-align">REACH</th>
+                                <th class="right-align">FOLLOWERS</th>
+                                <th>LINK</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fb-tbody">
+                            <!-- Injected via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
