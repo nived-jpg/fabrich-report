@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -202,6 +203,146 @@
                 </div>
             </div>
         </div>
+
+        <!-- ============================================================ -->
+        <!-- SEO PERFORMANCE & ACTIVITIES SECTION                         -->
+        <!-- ============================================================ -->
+        <div class="seo-section">
+            <h3 class="section-main-title seo-main-title">SEO Performance &amp; Activities</h3>
+            <p class="seo-section-desc">Google Search Console · March – April 2026</p>
+
+            <!-- SEO Metric Cards -->
+            <div class="seo-kpi-grid">
+                <div class="seo-kpi-card">
+                    <span class="kpi-label">TOTAL CLICKS</span>
+                    <span class="seo-kpi-value">161</span>
+                    <div class="seo-kpi-meta">
+                        <span class="seo-prev">prev. 116</span>
+                        <span class="seo-growth positive">↑ +38.8%</span>
+                    </div>
+                </div>
+                <div class="seo-kpi-card">
+                    <span class="kpi-label">TOTAL IMPRESSIONS</span>
+                    <span class="seo-kpi-value">9.51K</span>
+                    <div class="seo-kpi-meta">
+                        <span class="seo-prev">prev. 8.8K</span>
+                        <span class="seo-growth positive">↑ +8.06%</span>
+                    </div>
+                </div>
+                <div class="seo-kpi-card">
+                    <span class="kpi-label">AVERAGE CTR</span>
+                    <span class="seo-kpi-value">1.7%</span>
+                    <div class="seo-kpi-meta">
+                        <span class="seo-prev">prev. 1.3%</span>
+                        <span class="seo-growth positive">↑ +0.4%</span>
+                    </div>
+                </div>
+                <div class="seo-kpi-card">
+                    <span class="kpi-label">AVERAGE POSITION</span>
+                    <span class="seo-kpi-value">9</span>
+                    <div class="seo-kpi-meta">
+                        <span class="seo-prev">prev. 10.6</span>
+                        <span class="seo-growth positive">↑ Better ranking</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Multi-Line Performance Chart -->
+            <div class="section-card seo-chart-card">
+                <h3 class="section-title">SEO Performance Chart</h3>
+                <p class="sub-section-desc">Clicks · Impressions · CTR · Position — Last 28 Days</p>
+                <div class="seo-chart-wrapper">
+                    <canvas id="seoPerformanceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Web Search Click Trend -->
+            <div class="section-card seo-chart-card">
+                <h3 class="section-title" style="font-size:1.15rem;">Web Search Click Trend</h3>
+                <p class="sub-section-desc">Clicks are gradually increasing over time</p>
+                <div class="seo-trend-wrapper">
+                    <canvas id="seoClickTrendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Activities Grid -->
+            <div class="seo-activities-grid">
+
+                <!-- Key SEO Activities -->
+                <div class="section-card seo-activity-card">
+                    <div class="seo-activity-header">
+                        <span class="seo-activity-icon" style="background:#EBF1FF;color:#2F62E8;"><i class="fa-solid fa-list-check"></i></span>
+                        <h3 class="section-title" style="margin-bottom:0;">Key SEO Activities</h3>
+                    </div>
+                    <ul class="seo-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Review snippet fixed and validated</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pages indexed in Google Search Console</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Bing Places account created</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Duplicate homepage removed</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Homepage optimized for "Curtain shop in Kochi"</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Meta tags and content updated</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Footer updated for NAP consistency</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Technical SEO issues fixed</li>
+                    </ul>
+                </div>
+
+                <!-- Technical SEO Fixes -->
+                <div class="section-card seo-activity-card">
+                    <div class="seo-activity-header">
+                        <span class="seo-activity-icon" style="background:#FFF0F3;color:#E53E87;"><i class="fa-solid fa-wrench"></i></span>
+                        <h3 class="section-title" style="margin-bottom:0;">Technical SEO Fixes</h3>
+                    </div>
+                    <ul class="seo-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Product snippet error resolved</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Merchant snippet error fixed</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Review snippets validated</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Video indexing issues resolved</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Structured data implemented<br><span class="seo-sub-note">(Article, FAQ, Breadcrumbs, Local Business, Organization)</span></li>
+                        <li><i class="fa-solid fa-circle-check"></i> Homepage performance issues corrected</li>
+                    </ul>
+                </div>
+
+                <!-- On-Page SEO -->
+                <div class="section-card seo-activity-card">
+                    <div class="seo-activity-header">
+                        <span class="seo-activity-icon" style="background:#F0FFF4;color:#27AE60;"><i class="fa-solid fa-file-pen"></i></span>
+                        <h3 class="section-title" style="margin-bottom:0;">On-Page SEO</h3>
+                    </div>
+                    <ul class="seo-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> Curtain category page optimized</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Window blinds category optimized</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Location pages created:
+                            <ul class="seo-sub-list">
+                                <li>Edappally</li>
+                                <li>Kakkanad</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content & Indexing -->
+                <div class="section-card seo-activity-card">
+                    <div class="seo-activity-header">
+                        <span class="seo-activity-icon" style="background:#FFFBEB;color:#D97706;"><i class="fa-solid fa-rss"></i></span>
+                        <h3 class="section-title" style="margin-bottom:0;">Content &amp; Indexing</h3>
+                    </div>
+                    <ul class="seo-checklist">
+                        <li><i class="fa-solid fa-circle-check"></i> 2 blogs published</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Sitemap submitted successfully</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pages discovered and indexed</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Summary Insight Highlight Box -->
+            <div class="seo-summary-box">
+                <span class="seo-summary-icon"><i class="fa-solid fa-chart-line"></i></span>
+                <p>SEO performance is improving steadily with increases in clicks, impressions, CTR, and keyword positioning. Technical fixes and optimized content are contributing to better visibility and search growth.</p>
+            </div>
+
+        </div>
+        <!-- END SEO SECTION -->
 
     </div>
 

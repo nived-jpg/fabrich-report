@@ -392,3 +392,220 @@ header {
 .total-row td {
     font-weight: 700;
 }
+
+/* ============================================================
+   SEO PERFORMANCE & ACTIVITIES SECTION
+   ============================================================ */
+
+.seo-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.seo-main-title {
+    margin-bottom: 0.35rem;
+}
+
+.seo-section-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* SEO KPI Cards */
+.seo-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.seo-kpi-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    padding: 1.5rem 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seo-kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+}
+
+.seo-kpi-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0.5rem 0 0.75rem;
+    line-height: 1;
+}
+
+.seo-kpi-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.seo-prev {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.seo-growth {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.seo-growth.positive {
+    color: #16A34A;
+    background: #F0FDF4;
+}
+
+/* Chart Cards */
+.seo-chart-card {
+    margin-bottom: 1.5rem;
+}
+
+.seo-chart-wrapper {
+    position: relative;
+    height: 280px;
+}
+
+.seo-trend-wrapper {
+    position: relative;
+    height: 140px;
+}
+
+/* Activities Grid */
+.seo-activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.seo-activity-card {
+    margin-bottom: 0 !important;
+}
+
+.seo-activity-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.seo-activity-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Checklist */
+.seo-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.seo-checklist > li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.45;
+}
+
+.seo-checklist > li i {
+    color: #16A34A;
+    font-size: 0.85rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.seo-sub-note {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.seo-sub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.35rem 0 0 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.seo-sub-list li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+}
+
+.seo-sub-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--text-secondary);
+}
+
+/* Summary Box */
+.seo-summary-box {
+    background: linear-gradient(135deg, #EBF1FF 0%, #F3F0FF 100%);
+    border: 1px solid #C7D9FF;
+    border-radius: var(--card-radius);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.seo-summary-icon {
+    font-size: 1.4rem;
+    color: var(--brand-blue);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.seo-summary-box p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #1E3A8A;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .seo-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .seo-activities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .seo-kpi-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

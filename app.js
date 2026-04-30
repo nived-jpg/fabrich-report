@@ -246,4 +246,218 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize UI
     updateUI(currentPeriod);
+
+    // ============================================================
+    // SEO Charts
+    // ============================================================
+    (function initSeoCharts() {
+        // Generate 28 day labels (Apr 1 – Apr 28 as representative data)
+        const days = [];
+        for (let i = 1; i <= 28; i++) {
+            days.push(`Apr ${i}`);
+        }
+
+        // Simulated realistic daily data matching period totals
+        const clicksData   = [3,4,5,4,6,5,7,6,8,7,9,8,7,6,8,7,9,8,10,9,8,7,9,8,10,9,8,7];
+        const impData      = [280,295,310,300,340,320,360,340,390,370,410,390,370,350,390,370,410,390,440,420,400,380,420,400,445,425,410,390];
+        const ctrData      = [1.07,1.36,1.61,1.33,1.76,1.56,1.94,1.76,2.05,1.89,2.19,2.05,1.89,1.71,2.05,1.89,2.19,2.05,2.27,2.14,2.0,1.84,2.14,2.0,2.25,2.12,1.95,1.79];
+        const posData      = [11.2,10.8,10.5,10.9,10.4,10.7,10.1,10.4,9.9,10.1,9.7,9.9,10.2,10.5,9.9,10.1,9.7,9.9,9.4,9.6,9.9,10.1,9.6,9.8,9.2,9.4,9.6,9.8];
+
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        font: { family: "'Inter', sans-serif", size: 12 },
+                        usePointStyle: true,
+                        pointStyleWidth: 8,
+                        padding: 18,
+                        color: '#555'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(255,255,255,0.97)',
+                    titleColor: '#111',
+                    bodyColor: '#555',
+                    borderColor: '#E6E4DD',
+                    borderWidth: 1,
+                    padding: 10,
+                    titleFont: { family: "'Inter', sans-serif", weight: '600' },
+                    bodyFont:  { family: "'Inter', sans-serif" }
+                }
+            },
+            scales: {
+                x: {
+                    grid: { color: 'rgba(0,0,0,0.04)' },
+                    ticks: {
+                        font: { family: "'Inter', sans-serif", size: 11 },
+                        color: '#999',
+                        maxTicksLimit: 7,
+                        maxRotation: 0
+                    }
+                }
+            }
+        };
+
+        // Multi-line SEO Performance Chart (dual Y-axis)
+        const perfCtx = document.getElementById('seoPerformanceChart');
+        if (perfCtx) {
+            new Chart(perfCtx, {
+                type: 'line',
+                data: {
+                    labels: days,
+                    datasets: [
+                        {
+                            label: 'Clicks',
+                            data: clicksData,
+                            borderColor: '#2F62E8',
+                            backgroundColor: 'rgba(47,98,232,0.08)',
+                            borderWidth: 2.5,
+                            pointRadius: 0,
+                            pointHoverRadius: 5,
+                            tension: 0.45,
+                            fill: true,
+                            yAxisID: 'yLeft'
+                        },
+                        {
+                            label: 'Impressions',
+                            data: impData,
+                            borderColor: '#E53E87',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHoverRadius: 5,
+                            tension: 0.45,
+                            fill: false,
+                            yAxisID: 'yRight'
+                        },
+                        {
+                            label: 'CTR (%)',
+                            data: ctrData,
+                            borderColor: '#16A34A',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHoverRadius: 5,
+                            tension: 0.45,
+                            fill: false,
+                            borderDash: [5, 3],
+                            yAxisID: 'yLeft'
+                        },
+                        {
+                            label: 'Position',
+                            data: posData,
+                            borderColor: '#D97706',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHoverRadius: 5,
+                            tension: 0.45,
+                            fill: false,
+                            borderDash: [3, 3],
+                            yAxisID: 'yLeft'
+                        }
+                    ]
+                },
+                options: {
+                    ...commonOptions,
+                    scales: {
+                        ...commonOptions.scales,
+                        yLeft: {
+                            type: 'linear',
+                            position: 'left',
+                            grid: { color: 'rgba(0,0,0,0.04)' },
+                            ticks: {
+                                font: { family: "'Inter', sans-serif", size: 11 },
+                                color: '#999'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Clicks / CTR / Position',
+                                font: { family: "'Inter', sans-serif", size: 11 },
+                                color: '#aaa'
+                            }
+                        },
+                        yRight: {
+                            type: 'linear',
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: {
+                                font: { family: "'Inter', sans-serif", size: 11 },
+                                color: '#999'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Impressions',
+                                font: { family: "'Inter', sans-serif", size: 11 },
+                                color: '#aaa'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Click Trend Mini Chart
+        const trendCtx = document.getElementById('seoClickTrendChart');
+        if (trendCtx) {
+            // Smoother upward trend line
+            const trendData = clicksData.map((v, i) => +(v * (1 + i * 0.004)).toFixed(1));
+            new Chart(trendCtx, {
+                type: 'line',
+                data: {
+                    labels: days,
+                    datasets: [{
+                        label: 'Clicks',
+                        data: trendData,
+                        borderColor: '#2F62E8',
+                        backgroundColor: 'rgba(47,98,232,0.07)',
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        pointHoverRadius: 4,
+                        tension: 0.5,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(255,255,255,0.97)',
+                            titleColor: '#111',
+                            bodyColor: '#555',
+                            borderColor: '#E6E4DD',
+                            borderWidth: 1,
+                            padding: 8,
+                            titleFont: { family: "'Inter', sans-serif", weight: '600' },
+                            bodyFont:  { family: "'Inter', sans-serif" }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                font: { family: "'Inter', sans-serif", size: 10 },
+                                color: '#bbb',
+                                maxTicksLimit: 5,
+                                maxRotation: 0
+                            }
+                        },
+                        y: {
+                            grid: { color: 'rgba(0,0,0,0.04)' },
+                            ticks: {
+                                font: { family: "'Inter', sans-serif", size: 10 },
+                                color: '#bbb'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    })();
 });
