@@ -114,16 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.facebook?.table) {
             elements.facebook.tbody.innerHTML = data.facebook.table.map(row => `
                 <tr>
-                    <td class="content-name-col">
+                    <td class="content-name-col" data-label="Content">
                         <span class="content-title">${row.name}</span>
                         <span class="content-date">${row.date}</span>
                     </td>
-                    <td class="right-align">${row.views}</td>
-                    <td class="right-align">${row.interactions}</td>
-                    <td class="right-align">${row.engagements}</td>
-                    <td class="right-align">${row.reach}</td>
-                    <td class="right-align">${row.followers}</td>
-                    <td class="right-align"><a href="${row.link}" class="external-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    <td class="right-align" data-label="Views">${row.views}</td>
+                    <td class="right-align" data-label="Interactions">${row.interactions}</td>
+                    <td class="right-align" data-label="Engagements">${row.engagements}</td>
+                    <td class="right-align" data-label="Reach">${row.reach}</td>
+                    <td class="right-align" data-label="Followers">${row.followers}</td>
+                    <td class="right-align" data-label="Link"><a href="${row.link}" class="external-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                 </tr>
             `).join('');
         }
@@ -142,17 +142,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.instagram?.table) {
             elements.instagram.tbody.innerHTML = data.instagram.table.map(row => `
                 <tr>
-                    <td class="content-name-col">
+                    <td class="content-name-col" data-label="Content">
                         <span class="content-title">${row.name}</span>
                         <span class="content-date">${row.date}</span>
                     </td>
-                    <td class="right-align">${row.views}</td>
-                    <td class="right-align">${row.interactions}</td>
-                    <td class="right-align">${row.reach}</td>
-                    <td class="right-align">${row.likesAndReactions}</td>
-                    <td class="right-align">${row.shares}</td>
-                    <td class="right-align">${row.saves}</td>
-                    <td class="right-align"><a href="${row.link}" class="external-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    <td class="right-align" data-label="Views">${row.views}</td>
+                    <td class="right-align" data-label="Interactions">${row.interactions}</td>
+                    <td class="right-align" data-label="Reach">${row.reach}</td>
+                    <td class="right-align" data-label="Likes">${row.likesAndReactions}</td>
+                    <td class="right-align" data-label="Shares">${row.shares}</td>
+                    <td class="right-align" data-label="Saves">${row.saves}</td>
+                    <td class="right-align" data-label="Link"><a href="${row.link}" class="external-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
                 </tr>
             `).join('');
         }
@@ -160,23 +160,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update Meta Ads Awareness Table
         elements.metaAds.awarenessTbody.innerHTML = data.metaAds.awareness.map(row => `
             <tr class="${row.name === 'Total' ? 'total-row' : ''}">
-                <td>${row.name}</td>
-                <td class="right-align">${row.reach}</td>
-                <td class="right-align">${row.impressions}</td>
-                <td class="right-align">${row.amount}</td>
-                <td class="right-align">${row.cpm}</td>
+                <td data-label="Ad Name">${row.name}</td>
+                <td class="right-align" data-label="Reach">${row.reach}</td>
+                <td class="right-align" data-label="Impressions">${row.impressions}</td>
+                <td class="right-align" data-label="Spend">${row.amount}</td>
+                <td class="right-align" data-label="CPM">${row.cpm}</td>
             </tr>
         `).join('');
 
         // Update Meta Ads Lead Gen Table
         elements.metaAds.leadGenTbody.innerHTML = data.metaAds.leadGeneration.map(row => `
             <tr class="${row.name === 'Total' ? 'total-row' : ''}">
-                <td>${row.name}</td>
-                <td class="right-align">${row.leads}</td>
-                <td class="right-align">${row.reach}</td>
-                <td class="right-align">${row.impressions}</td>
-                <td class="right-align">${row.amount}</td>
-                <td class="right-align">${row.cpm}</td>
+                <td data-label="Ad Name">${row.name}</td>
+                <td class="right-align" data-label="Leads">${row.leads}</td>
+                <td class="right-align" data-label="Reach">${row.reach}</td>
+                <td class="right-align" data-label="Impressions">${row.impressions}</td>
+                <td class="right-align" data-label="Spend">${row.amount}</td>
+                <td class="right-align" data-label="CPM">${row.cpm}</td>
             </tr>
         `).join('');
     }
