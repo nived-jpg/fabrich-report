@@ -265,7 +265,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     // SEO Charts
     // ============================================================
-    (function initSeoCharts() {
+    // ============================================================
+    // SEO Charts (Lazy Loaded)
+    // ============================================================
+    const initSeoCharts = () => {
         const isMobile = window.innerWidth <= 768;
 
         // Generate 28 day labels
@@ -377,7 +380,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-    })();
+    };
+
+    // Use IntersectionObserver to lazy load charts
+    const chartObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                initSeoCharts();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const seoSection = document.querySelector('.seo-section');
+    if (seoSection) {
+        chartObserver.observe(seoSection);
+    }
 });
 
 });
