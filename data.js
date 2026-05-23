@@ -150,5 +150,70 @@ const reportData = {
                 { name: "Apr_12_LG_Kochi_Ad", leads: "-", reach: "2,141", impressions: "2,556", amount: "₹23.88", cpm: "9.34" }
             ]
         }
+    },
+    "Apr18-May17": {
+        periodLabel: "Apr18 – May17 2026",
+        summary: {
+            leads: "98",
+            conversions: "3",
+            revenue: "₹3.20L",
+            adSpend: "₹37,842.15",
+            roas: "8.46",
+            cpl: "₹386.14",
+            retainer: "₹55,000",
+            seoCost: "₹20,000",
+            totalSpend: "₹57,842.15",
+            roi: "1.78",
+            cpa: "₹19,280"
+        },
+        funnel: {
+            leadQualified: { values: "24 / 98", percentage: "24.5%" },
+            qualifiedVisit: { values: "6 / 24", percentage: "25.0%" },
+            visitSale: { values: "3 / 6", percentage: "50.0%" },
+            overall: { values: "3 / 98", percentage: "3.1%" }
+        },
+        facebook: {
+            cards: {
+                totalViews: "3.8M",
+                uniqueViewers: "1.1M",
+                engagement: "312",
+                netFollowers: "+12",
+                totalFollowers: "2349"
+            },
+            table: [
+                { name: "decor inside episode 3", date: "22 Apr", views: 350, interactions: 4, engagements: 290, reach: 2, followers: "+11", link: "#" },
+                { name: "Summer blinds selection", date: "27 Apr", views: 45, interactions: 1, engagements: 12, reach: 5, followers: "+0", link: "#" },
+                { name: "modern window drapery aesthetic", date: "3 May", views: 98, interactions: 3, engagements: 22, reach: 78, followers: "+4", link: "#" },
+                { name: "How to measure curtains", date: "9 May", views: 195, interactions: 5, engagements: 48, reach: 145, followers: "+8", link: "#" }
+            ]
+        },
+        instagram: {
+            cards: {
+                totalViews: "4,982,104",
+                accountsReached: "1,215,903",
+                interactions: "3,942",
+                profileVisits: "3,450",
+                totalFollowers: "3,812"
+            },
+            table: [
+                { name: "Décor inside Episode 3", date: "22 Apr", views: 712, interactions: 28, reach: 520, likesAndReactions: 22, shares: 4, saves: 2, link: "#" },
+                { name: "Summer Blinds Selection", date: "27 Apr", views: 498, interactions: 12, reach: 245, likesAndReactions: 8, shares: 3, saves: 1, link: "#" },
+                { name: "Modern Window Drapery Aesthetic", date: "3 May", views: 590, interactions: 18, reach: 312, likesAndReactions: 14, shares: 2, saves: 2, link: "#" },
+                { name: "How to Measure Curtains", date: "9 May", views: 680, interactions: 32, reach: 410, likesAndReactions: 24, shares: 5, saves: 3, link: "#" }
+            ]
+        },
+        metaAds: {
+            awareness: [
+                { name: "Total", reach: "9,12,050", impressions: "16,40,920", amount: "₹5,120.45", cpm: "₹3.12" },
+                { name: "Apr_18_Awareness_Kochi_Ad", reach: "9,12,050", impressions: "16,40,920", amount: "₹5,120.45", cpm: "₹3.12" }
+            ],
+            leadGeneration: [
+                { name: "Total", leads: 98, reach: "12,42,800", impressions: "35,12,490", amount: "₹32,721.70", cpm: "9.32" },
+                { name: "May_02_LG_Kochi_Ad_1", leads: 48, reach: "3,12,400", impressions: "6,98,200", amount: "₹7,850.30", cpm: "11.24" },
+                { name: "Apr_18_LG_Kochi_Ad", leads: 42, reach: "6,80,200", impressions: "21,45,100", amount: "₹18,450.20", cpm: "8.60" },
+                { name: "May_10_LG_Kochi_Ad", leads: 8, reach: "2,48,200", impressions: "6,64,190", amount: "₹6,398.10", cpm: "9.63" },
+                { name: "May_12_LG_Kochi_Ad", leads: "-", reach: "2,000", impressions: "5,000", amount: "₹23.10", cpm: "4.62" }
+            ]
+        }
     }
 };

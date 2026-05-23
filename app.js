@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         periodDate: document.getElementById('reporting-period-date'),
         btnFebMar: document.getElementById('btn-feb-mar'),
         btnMarApr: document.getElementById('btn-mar-apr'),
+        btnAprMay: document.getElementById('btn-apr-may'),
         summary: {
             leads: document.getElementById('kpi-leads'),
             conversions: document.getElementById('kpi-conversions'),
@@ -72,11 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update Period Label
         elements.periodDate.textContent = data.periodLabel;
 
-        const periodTextShort = (periodKey === 'Feb18-Mar17') ? 'Feb – Mar' : 'Mar – Apr';
+        const periodTextShort = (periodKey === 'Feb18-Mar17') ? 'Feb – Mar' : (periodKey === 'Apr18-May17' ? 'Apr – May' : 'Mar – Apr');
         if (elements.instagram.desc) elements.instagram.desc.textContent = `Organic post-level metrics · ${periodTextShort}`;
         if (elements.facebook.desc) elements.facebook.desc.textContent = `Organic post-level metrics · ${periodTextShort}`;
 
-        const metaAdsPeriodText = (periodKey === 'Feb18-Mar17') ? 'Feb 18 – Mar 17' : 'Mar 18 – Apr 17';
+        const metaAdsPeriodText = (periodKey === 'Feb18-Mar17') ? 'Feb 18 – Mar 17' : (periodKey === 'Apr18-May17' ? 'Apr 18 – May 17' : 'Mar 18 – Apr 17');
         const awarenessTab = document.querySelector('.sub-tab-btn[data-target="awareness"]');
         const isAwarenessActive = awarenessTab && awarenessTab.classList.contains('active');
         
@@ -185,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.btnFebMar.addEventListener('click', () => {
         elements.btnFebMar.classList.add('active');
         elements.btnMarApr.classList.remove('active');
+        elements.btnAprMay.classList.remove('active');
         currentPeriod = 'Feb18-Mar17';
         updateUI(currentPeriod);
     });
@@ -192,7 +194,16 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.btnMarApr.addEventListener('click', () => {
         elements.btnMarApr.classList.add('active');
         elements.btnFebMar.classList.remove('active');
+        elements.btnAprMay.classList.remove('active');
         currentPeriod = 'Mar18-Apr17';
+        updateUI(currentPeriod);
+    });
+
+    elements.btnAprMay.addEventListener('click', () => {
+        elements.btnAprMay.classList.add('active');
+        elements.btnFebMar.classList.remove('active');
+        elements.btnMarApr.classList.remove('active');
+        currentPeriod = 'Apr18-May17';
         updateUI(currentPeriod);
     });
 
@@ -233,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (targetEl) targetEl.classList.add('active');
 
                 // Update description
-                const periodText = (currentPeriod === 'Feb18-Mar17') ? 'Feb 18 – Mar 17' : 'Mar 18 – Apr 17';
+                const periodText = (currentPeriod === 'Feb18-Mar17') ? 'Feb 18 – Mar 17' : (currentPeriod === 'Apr18-May17' ? 'Apr 18 – May 17' : 'Mar 18 – Apr 17');
                 if (btn.dataset.target === 'awareness') {
                     if (elements.metaAds.desc) elements.metaAds.desc.textContent = `Awareness Campaign Performance · ${periodText}`;
                 } else {
