@@ -158,13 +158,13 @@ const reportData = {
             conversions: "2",
             revenue: "₹30,000",
             adSpend: "₹33,350.07",
-            roas: "--",
-            cpl: "₹147.5",
-            retainer: "--",
-            seoCost: "--",
-            totalSpend: "--",
+            roas: "0.90",
+            cpl: "₹383.33",
+            retainer: "₹55,000",
+            seoCost: "₹0",
+            totalSpend: "₹33,350.07",
             roi: "--",
-            cpa: "--"
+            cpa: "₹16,675.04"
         },
         funnel: {
             leadQualified: { values: "8 / 87", percentage: "9.2%" },
@@ -197,7 +197,11 @@ const reportData = {
                 { name: "Total", reach: "--", impressions: "--", amount: "--", cpm: "--" }
             ],
             leadGeneration: [
-                { name: "Total", leads: 87, reach: "--", impressions: "--", amount: "₹33,350.07", cpm: "--" }
+                { name: "Total", leads: 214, reach: "4,09,330", impressions: "17,79,876", amount: "₹29,549.06", cpm: "16.60" },
+                { name: "Apr_12_LG_Kochi_Ad_1", leads: 50, reach: "3,00,090", impressions: "11,54,149", amount: "₹14,444.28", cpm: "12.52" },
+                { name: "May_12_LG_Kochi_Ad", leads: 17, reach: "20,645", impressions: "34,696", amount: "₹1,368.72", cpm: "39.45" },
+                { name: "May_01_LG_Kochi_Ad", leads: 124, reach: "68,176", impressions: "1,90,184", amount: "₹6,500.07", cpm: "34.18" },
+                { name: "Apr_12_LG_Kochi_Ad", leads: 23, reach: "1,23,177", impressions: "4,00,847", amount: "₹7,235.99", cpm: "18.05" }
             ]
         }
     }
