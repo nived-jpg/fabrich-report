@@ -73,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update Period Label
         elements.periodDate.textContent = data.periodLabel;
 
+        // Show/hide SEO section — not applicable for Apr18-May17
+        const seoSectionEl = document.querySelector('.seo-section');
+        if (seoSectionEl) {
+            seoSectionEl.style.display = (periodKey === 'Apr18-May17') ? 'none' : '';
+        }
+
         const periodTextShort = (periodKey === 'Feb18-Mar17') ? 'Feb – Mar' : (periodKey === 'Apr18-May17' ? 'Apr – May' : 'Mar – Apr');
         if (elements.instagram.desc) elements.instagram.desc.textContent = `Organic post-level metrics · ${periodTextShort}`;
         if (elements.facebook.desc) elements.facebook.desc.textContent = `Organic post-level metrics · ${periodTextShort}`;
