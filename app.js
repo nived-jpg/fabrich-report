@@ -101,6 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
             elements.summary[key].textContent = data.summary[key] || '--';
         });
 
+        // Hide ROI card specifically for Apr18-May17
+        const roiCard = elements.summary.roi.parentElement;
+        if (roiCard) {
+            roiCard.style.display = (periodKey === 'Apr18-May17') ? 'none' : '';
+        }
+
         // Update Funnel
         Object.keys(elements.funnel).forEach(key => {
             elements.funnel[key].values.textContent = data.funnel[key].values;
