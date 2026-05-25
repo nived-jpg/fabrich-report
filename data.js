@@ -174,23 +174,46 @@ const reportData = {
         },
         facebook: {
             cards: {
-                totalViews: "--",
-                uniqueViewers: "--",
-                engagement: "--",
-                netFollowers: "--",
-                totalFollowers: "--"
+                totalViews: "921.8K",
+                uniqueViewers: "288.1K",
+                engagement: "341",
+                netFollowers: "0",
+                totalFollowers: "2.3K"
             },
-            table: []
+            table: [
+                { name: "Nothing beats the feeling of diving into a perfectly made bed.", date: "April 22", views: 125, reach: 102, engagements: 2, interactions: 2, followers: 18, link: "#" },
+                { name: "Think stitching is just about thread?", date: "April 24", views: 95, reach: 71, engagements: 2, interactions: 2, followers: 28, link: "#" },
+                { name: "Why Most Curtains Fails?", date: "April 27", views: 22, reach: 11, engagements: 0, interactions: 0, followers: 0, link: "#" },
+                { name: "Curtains: The ultimate finishing touch.", date: "April 29", views: 85, reach: 77, engagements: 0, interactions: 0, followers: 12, link: "#" },
+                { name: "Curtains: From precise measurements to the final reveal.", date: "May 1", views: 150, reach: 126, engagements: 3, interactions: 3, followers: 39, link: "#" },
+                { name: "The secret is in the details.", date: "May 4", views: 64, reach: 61, engagements: 0, interactions: 0, followers: 11, link: "#" },
+                { name: "From installation to inspiration.", date: "May 6", views: 79, reach: 77, engagements: 1, interactions: 1, followers: 11, link: "#" },
+                { name: "Seasonal Curtain Styling.", date: "May 8", views: 15, reach: 0, engagements: 0, interactions: 0, followers: 13, link: "#" },
+                { name: "From bare windows to breathtaking views.", date: "May 11", views: 127, reach: 92, engagements: 3, interactions: 3, followers: 20, link: "#" },
+                { name: "Why struggle with manual drapes?", date: "May 13", views: 232, reach: 212, engagements: 2, interactions: 2, followers: 39, link: "#" },
+                { name: "Your curtains do more than just cover windows.", date: "May 15", views: 30, reach: 0, engagements: 2, interactions: 2, followers: 0, link: "#" }
+            ]
         },
         instagram: {
             cards: {
-                totalViews: "--",
-                accountsReached: "--",
-                interactions: "--",
-                profileVisits: "--",
-                totalFollowers: "--"
+                totalViews: "1,535,089",
+                accountsReached: "385,392",
+                interactions: "1435",
+                profileVisits: "1243",
+                totalFollowers: "3732"
             },
-            table: []
+            table: [
+                { name: "Nothing beats the feeling of diving into a perfectly made bed.", date: "April 22", views: 459, interactions: 18, reach: 324, likesAndReactions: 12, shares: 2, saves: 0, link: "#" },
+                { name: "Think stitching is just about thread?", date: "April 24", views: 494, interactions: 18, reach: 375, likesAndReactions: 13, shares: 3, saves: 1, link: "#" },
+                { name: "Curtains: The ultimate finishing touch.", date: "April 29", views: 390, interactions: 9, reach: 290, likesAndReactions: 6, shares: 2, saves: 1, link: "#" },
+                { name: "Curtains: From precise measurements to the final reveal.", date: "May 1", views: 584, interactions: 18, reach: 425, likesAndReactions: 15, shares: 0, saves: 1, link: "#" },
+                { name: "The secret is in the details.", date: "May 4", views: 356, interactions: 6, reach: 271, likesAndReactions: 5, shares: 0, saves: 0, link: "#" },
+                { name: "From installation to inspiration.", date: "May 6", views: 449, interactions: 15, reach: 321, likesAndReactions: 10, shares: 3, saves: 0, link: "#" },
+                { name: "Seasonal Curtain Styling.", date: "May 8", views: 421, interactions: 1, reach: 152, likesAndReactions: 1, shares: 0, saves: 0, link: "#" },
+                { name: "From bare windows to breathtaking views.", date: "May 11", views: 427, interactions: 6, reach: 303, likesAndReactions: 6, shares: 0, saves: 0, link: "#" },
+                { name: "Why struggle with manual drapes?", date: "May 13", views: 507, interactions: 15, reach: 392, likesAndReactions: 10, shares: 1, saves: 2, link: "#" },
+                { name: "Your curtains do more than just cover windows.", date: "May 15", views: 375, interactions: 7, reach: 149, likesAndReactions: 5, shares: 1, saves: 0, link: "#" }
+            ]
         },
         metaAds: {
             awareness: [
